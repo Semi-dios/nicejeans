@@ -1,10 +1,17 @@
 // Fonts
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
 
-
+//Rem
+@import "node_modules/sass-rem/rem";
+$sass-fallback: true;
 // Variables
 @import 'variables';
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
+
+// Mixin
+@import 'mixin';
+// Style
+@import 'style';

@@ -1,0 +1,282 @@
+/* Content List */
+/***************/
+// 1.Landing Page
+// 2.Header
+// 3.Content
+// 4.Footer
+/**************/
+
+
+
+/*  1.Landing Page */
+
+
+#viewWelcome {
+    .imgLanding {
+        width: 100%;
+        height: auto;
+        
+
+        img {
+            object-fit: cover;
+            width: 100%;
+        }
+    }
+    .content-text-landing {
+        width: 100%;
+        height: 100%;
+        vertical-align: text-bottom;
+        position: relative;
+     
+    }
+
+    @media (min-width: 1300px){
+        .title-xl {
+            position: absolute;
+            color: $secondary;
+            bottom: 60%;
+        }
+        .p-lg {
+            position: absolute;
+            bottom: 15%;
+        }
+    }
+    @media (max-width: 900px){
+        .title-xl {
+            font-size: rem(18px);
+            color: $secondary;
+            bottom: 60%;
+        }
+        .p-lg {
+            font-size: rem(12px);
+        }
+        .imgLanding {
+            max-width: rem(200px);
+            height: auto; 
+            img {
+                object-fit: cover;
+                width: 100%;
+            }
+        }
+    }
+  
+}
+
+
+/*  1.Login */
+
+#viewLogin {
+    .custom-btn-primary {
+        display: inline-flex;
+        @include btn-primary($height: rem(35px), $font: rem(12px))
+    }
+    .title-xl {
+        font-weight: bold;
+        color: $secondary;
+        bottom: 60%;
+    }
+
+    .contentLogo {
+        width: 100%;
+        height: auto;
+        img {
+            max-width: rem(85px) ;
+            object-fit: cover;
+        }
+    }
+    .formLogin {
+        height: auto;
+        position: relative;
+        .custom-form-group {
+            width: 100%;
+            height: rem(50px);
+            margin-bottom: rem(10px);
+        }
+            input {
+                color: #2F4F4F;
+                padding: 12.5px;
+                border: none;
+                position:absolute;
+                transition: all .5s;
+                outline: none;
+                background: transparent;
+                
+                &::placeholder {
+                    color: #708090;
+                }
+                &.inputcr {
+                    background: transparent;
+                    border-bottom: 2px solid #86d6d8;
+                    width: 100%;
+                    top: 15%;
+                    left: 50%;
+                    transform: translate(-50%, -30%);
+                    &:hover {
+                        
+                        border-bottom: 2px solid #20c3d0;
+                    }
+                    
+                }
+                &.inputps{
+                    background: transparent;
+                    border-bottom: 2px solid #86d6d8;
+                    position: absolute;
+                    width: 100%;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -55%);         
+                    &:hover {
+                        
+                        border-bottom: 2px solid #20c3d0;
+                    }
+                    
+                }
+        }
+    }
+    .imgLogin {
+        width: 100%;
+        height: auto;
+        
+
+        img {
+            object-fit: cover;
+            width: 100%;
+        }
+    }
+            
+            
+  
+
+    @media (min-width: 768px) {
+        .custom-btn-primary {
+            min-width: rem(150px);
+        }
+        
+       
+    }
+    @media (max-width: 768px) {
+        .custom-btn-primary {
+            min-width: rem(150px);
+        }
+        .imgLogin {
+           width: 100%;
+           padding: rem(15px);
+           display: flex;
+           justify-content: center;
+            height: auto; 
+            img {
+                object-fit: cover;
+                width: rem(200px);
+                height: auto;
+            }
+        }
+       
+    }
+}
+#viewForgot {
+  @extend #viewLogin;
+  .contentLogo {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+
+  .customform {
+    .custom-form-group {
+        width: 100%;
+        height: rem(50px);
+        margin-bottom: rem(10px);
+        position: relative;
+    }
+    input {
+        color: #2F4F4F;
+        padding: 12.5px;
+        border: none;
+        position:absolute;
+        transition: all .5s;
+        outline: none;
+        background: transparent;
+        
+        &::placeholder {
+            color: #708090;
+        }
+        &.inputcr {
+            background: transparent;
+            border-bottom: 2px solid #86d6d8;
+            width: 100%;
+            top: 30%;
+            left: 50%;
+            transform: translate(-50%, -30%);
+            &:hover {
+                
+                border-bottom: 2px solid #20c3d0;
+            }
+            
+        }
+      
+}
+  }
+ 
+}
+#viewReset {
+  @extend #viewLogin;
+  .contentLogo {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+
+  .customform {
+    .custom-form-group {
+        width: 100%;
+        height: rem(50px);
+        margin-bottom: rem(10px);
+        position: relative;
+    }
+    input {
+        color: #2F4F4F;
+        padding: 12.5px;
+        border: none;
+        position:absolute;
+        transition: all .5s;
+        outline: none;
+        background: transparent;
+        
+        &::placeholder {
+            color: #708090;
+        }
+        &.inputps {
+            background: transparent;
+            border-bottom: 2px solid #86d6d8;
+            width: 100%;
+            top: 30%;
+            left: 50%;
+            transform: translate(-50%, -30%);
+            &:hover {
+                
+                border-bottom: 2px solid #20c3d0;
+            }
+            
+        }
+        &.inputpsc {
+            background: transparent;
+            border-bottom: 2px solid #86d6d8;
+            width: 100%;
+            top: 30%;
+            left: 50%;
+            transform: translate(-50%, -30%);
+            &:hover {
+                
+                border-bottom: 2px solid #20c3d0;
+            }
+            
+        }
+      
+}
+  }
+ 
+}
+
+#viewContact {
+    @extend #viewWelcome;
+}

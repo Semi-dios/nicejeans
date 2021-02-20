@@ -1,0 +1,62 @@
+@mixin box-shadow ($top:6px, $left:6px, $blur:12px, $color:#00000099, $inset:"") {
+    -webkit-box-shadow:$top $left $blur $color #{$inset};
+    -moz-box-shadow:$top $left $blur $color #{$inset};
+    box-shadow:$top $left $blur $color #{$inset};
+}
+
+@mixin radius($border-top-left:rem(8px), $border-top-right:rem(8px), $border-bottom-left:rem(8px), $border-bottom-right:rem(8px)) {
+    -moz-border-radius-topleft: $border-top-left ;
+    -webkit-border-top-left-radius: $border-top-left ;
+    border-top-left-radius: $border-top-left ;
+    -moz-border-radius-topright: $border-top-right ;
+    -webkit-border-top-right-radius: $border-top-right ;
+    border-top-right-radius: $border-top-right ;
+    -moz-border-radius-bottomright: $border-bottom-right ;
+    -webkit-border-bottom-right-radius: $border-bottom-right ;
+    border-bottom-right-radius: $border-bottom-right ;
+    -moz-border-radius-bottomleft: $border-bottom-left ;
+    -webkit-border-bottom-left-radius: $border-bottom-left ;
+}
+
+@mixin btn-secondary($height: rem(45px), $font: rem(13px)){
+    @include radius($border-top-left:rem(25px), $border-top-right:rem(25px), $border-bottom-left:rem(25px), $border-bottom-right:rem(25px)) ;
+    height: $height;
+    width: auto;
+    box-sizing: border-box;
+    padding: rem(5px);
+    font-size: $font;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $white;
+    background: $secondary;
+    border-color: $secondary;
+    &:hover, &:active, &:visited ,&.btn-outline-primary:not(:disabled):not(.disabled):active {
+        color: $white;
+        background: $secondary;
+        border-color: $secondary;
+        cursor: pointer;
+    }
+ 
+
+}
+@mixin btn-primary($height: rem(45px), $font: rem(13px)){
+    @include radius($border-top-left:rem(25px), $border-top-right:rem(25px), $border-bottom-left:rem(25px), $border-bottom-right:rem(25px)) ;
+    height: $height;
+    width: auto;
+    box-sizing: border-box;
+    padding: rem(5px);
+    font-size: $font;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $white;
+    background: $primary;
+    border-color: $primary;
+    &:hover {
+        color: $white;
+        background: $primary;
+        border-color: $primary;
+        cursor: pointer;
+    }
+}

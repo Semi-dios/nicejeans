@@ -1,0 +1,16 @@
+.customHeader {
+    .logoHeader {
+        width: rem(150px);
+        height: auto;
+        img {
+            object-fit: cover;
+        }
+    }
+   
+
+    @media (min-width: 768px) {
+        .custom-btn-secondary {
+            min-width: rem(150px);
+        }
+    }
+}

@@ -6,6 +6,11 @@ import Router from 'vue-router';
 /* Web */
 import Welcome from '../js/components/views/web/Welcome.vue';
 import Login from '../js/components/views/web/Login.vue';
+import Register from '../js/components/views/web/Register.vue';
+import About from '../js/components/views/web/About.vue';
+import Contact from '../js/components/views/web/Contact.vue';
+import Forgot from '../js/components/views/web/Forgot.vue';
+import Reset from '../js/components/views/web/ResetPassword.vue';
 
 
 /* Dashboard */
@@ -16,12 +21,55 @@ const routes = [
     {
         path: '/',
         name: 'welcome',
-        component:Welcome
+        component:Welcome,
+        meta: {
+            header: 1
+        }
     },
     {
         path: '/login',
         name: 'login',
-        component:Login
+        component:Login,
+        meta: {
+            header: 2
+        }
+    },
+    {
+        path: '/forgotPassword',
+        name: 'forgot',
+        component:Forgot,
+        meta: {
+            header: 2
+        }
+    },
+    {
+        path: '/resetPassword',
+        name: 'reset',
+        component:Reset,
+        meta: {
+            header: 2
+        }
+    },
+    {
+        path: '/register',
+        name: 'register',
+        component:Register
+    },
+    {
+        path: '/contact',
+        name: 'contact',
+        component:Contact,
+        meta: {
+            header: 1
+        }
+    },
+    {
+        path: '/about',
+        name: 'about',
+        component:About,
+        meta: {
+            header: 1
+        }
     },
     {
         path: '/adminProduct',
@@ -31,7 +79,8 @@ const routes = [
 ];
 
 const router = new Router({
-    routes:routes
+    routes:routes,
+    linkActiveClass: 'active'
 });
 
 

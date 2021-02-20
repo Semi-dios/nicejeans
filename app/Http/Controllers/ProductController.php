@@ -35,6 +35,22 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'name'=>'required|min:3',
+            'image'=>'required|image|mimes:jpg,jpeg,png'
+        ]);
+
+
+        $product = new Product();
+        $product->name = $request->name;
+        $path = $request->file('images')->store('products');
+        $product->image = $path;
+
+        if($product->save()){
+            return response()->json($product,200);
+        }else {
+            return response()->json($product,500);
+        }
         dd($request->all());
     }
 
