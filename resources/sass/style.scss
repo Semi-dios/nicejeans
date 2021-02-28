@@ -11,7 +11,6 @@
 /* 1. Layout */
 /* Background */
 .custom-bg{
-
     background-repeat:no-repeat;
     background-size: cover;
     font-family: $font-family-sans-serif;
@@ -64,7 +63,7 @@
 .p-sm {
     font-size:rem(12px);
 }
-.p-sm {
+.p-xs {
     font-size:rem(10px);
 }
 
@@ -76,12 +75,12 @@
     margin: auto;
     width: auto;
     height: auto;
-    @include radius($border-top-left:rem(20px), $border-top-right:rem(20px), $border-bottom-left:rem(20px), $border-bottom-right:rem(20px));
+    @include radius($border-top-left:rem(18px), $border-top-right:rem(18px), $border-bottom-left:rem(18px), $border-bottom-right:rem(18px));
     @include box-shadow($top: 1px, $left: 4px, $blur: 4px, $color: #00000023, $inset: "");
-    padding: rem(25px);
+
 }
 
-// Button
+/*  Buttons */
 .custom-btn-secondary {
     @include btn-secondary();
 }
@@ -97,6 +96,9 @@
 .text-primary {
     color: $primary;
 }
+.text-black {
+    color: $black;
+}
 
 
 /* Form */
@@ -106,7 +108,37 @@
     border: 0 !important;
 }
 
+.custom-input {
+    @include input;
+}
+.customtextArea {
+    @include textArea;
+}
 
+
+
+/* Modal */
+
+
+
+.custom-close {
+    padding: rem(5px) !important;
+    margin: 0 !important;
+    background: transparent;
+    background-color: transparent;
+    text-align: center;
+    display: inline-flex;
+    align-items:center;
+
+    &:hover, &:focus, &:visited {
+        background: transparent;
+        background-color: transparent;
+        box-shadow: none;
+    }
+    i {
+        font-size: rem(13px);
+    }
+}
 
 /* 2. Header */
 

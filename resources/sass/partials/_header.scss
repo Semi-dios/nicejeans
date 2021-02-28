@@ -6,7 +6,12 @@
             object-fit: cover;
         }
     }
-   
+    .custom-btn-secondary{
+        height: rem(40px);
+        font-size: rem(13px);
+        @include box-shadow($top: 0px, $left: 3px, $blur: 6px, $color: #00000029, $inset: "");
+    }
+
 
     @media (min-width: 768px) {
         .custom-btn-secondary {

@@ -1,84 +1,107 @@
 <template>
-  <div id="viewLogin">
-    <b-row class="mb-4">
-        <b-col sm="12">
-            <router-link :to="{name: 'welcome'}">
-                <picture  class="contentLogo">
-                    <img src="/images/logo.svg" alt="">
-                </picture>
-            </router-link>
-            
+  <b-container fluid id="viewLogin" class="p-0">
+      <b-row>
+          <b-col>
+            <ModalForgot/>
         </b-col>
-    </b-row>
-    <b-row>
-        <b-col sm="12" lg="6" class="justify-content-center">
-             
-            <h3 class="title-xl text-secondary">
-                Bienvenido  !!
-            </h3>
-            <p class="p-md text-secondary">Inicio de sesion</p>
-            <b-form @submit="onSubmit" @reset="onReset" v-if="show" class="formLogin mb-5 ">
-            <b-form-group
-                id="input-group-1"
-                label-for="input-1"
-                description=""
-                class="custom-form-group"
-            >
-                <b-form-input
-                id="input-1"
-                v-model="form.email"
-                type="email"
-                placeholder="Ingrese Email"
-                class="inputcr"
-                required
-                ></b-form-input>
-            </b-form-group>
-
-            <b-form-group id="input-group-2"  label-for="input-2"
-            class="custom-form-group">
-                <b-form-input
-                id="input-2"
-                v-model="form.name"
-                placeholder="Ingrese Contraseña"
-                class="inputps"
-                type="password"
-                required
-                ></b-form-input>
-            </b-form-group>
-
-
-           <div class="form-group d-flex justify-content-center">
-                <b-button type="submit" class="custom-btn-primary" >Iniciar Sesion</b-button>
-           </div>
-            </b-form>
-
-            <b-row>
-                <b-col class="d-flex justify-content-between">
-                    <router-link :to="{name: 'forgot'}" class="text-secondary">Olvido su contraseña?</router-link>
-                    <router-link  to="/register" class="text-secondary">Registro</router-link>
+      </b-row>
+    <b-row class="">
+        <b-col sm="12" md="8" class="justify-content-center py-3 pr-md-2">
+           <b-container fluid>
+                <b-row>
+                <b-col sm="12" class="justify-content-md-end d-flex mb-4">
+                    <router-link :to="{name: 'welcome'}">
+                        <picture  class="contentLogo">
+                            <img src="/images/logo.svg" alt="">
+                        </picture>
+                    </router-link>
 
                 </b-col>
             </b-row>
+                <h3 class="title-xl  mb-4 text-primary">
+                    INICIO SESION
+                </h3>
+
+                <b-form @submit="onSubmit" @reset="onReset" v-if="show" class="formLogin mb-5 ">
+                <b-form-group
+                    id="input-group-1"
+                    label-for="input-1"
+                    description=""
+                    class="custom-form-group mb-3"
+                    label="Correo:"
+                >
+                    <b-form-input
+                    id="input-1"
+                    v-model="form.email"
+                    type="email"
+                    placeholder="Ingrese correo"
+                    class="custom-input "
+                    required
+                    ></b-form-input>
+                </b-form-group>
+
+                <b-form-group id="input-group-2"  label="Contraseña:" label-for="input-2"
+                class="custom-form-group mb-5">
+                    <b-form-input
+                    id="input-2"
+                    v-model="form.name"
+                    placeholder="Ingrese Contraseña"
+                    class="custom-input"
+                    type="password"
+                    required
+                    ></b-form-input>
+                </b-form-group>
+
+
+                <div class="form-group d-flex justify-content-center">
+                        <b-button type="submit" class="custom-btn-primary" >Iniciar Sesion</b-button>
+                </div>
+                </b-form>
+
+                <b-row>
+                    <b-col class="d-flex justify-content-between">
+                        <b-link class="text-black"  v-b-modal.viewForgot > Olvido su contraseña?</b-link>
+                        <router-link  to="/register" class="text-black">Registro</router-link>
+                    </b-col>
+                </b-row>
+           </b-container>
         </b-col>
-        <b-col sm="12" lg="6">
-            <picture class="imgLogin">
-                <img src="/images/login.svg" alt="">
-            </picture>            
+           <b-col sm="12" md="4" class="pl-md-2 justify-content-center">
+            <div class="welcomeback">
+                    <div class="welcomebackHeader ">
+                    <h3 class="title-xl   text-secondary">
+                         BIENVENIDO !!
+                    </h3>
+                    <br>
+                    <p class="p-md text-black">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde nulla blanditiis nam. Quidem, deleniti et? Quaerat eum consequatur ea rem! Quaerat cumque dolorem vel nihil? Dolores accusamus voluptatibus iusto similique!
+                    </p>
+                    </div>
+                    <router-link class="btn  custom-btn-secondary" :to="{name:'welcome'}">Regresar</router-link>
+
+
+
+            </div>
         </b-col>
     </b-row>
 
-  </div>
+
+  </b-container>
 </template>
 
 <script>
+import ModalForgot  from './Forgot';
   export default {
-      nme: 'login',
+      name: 'login',
+      components: {
+          ModalForgot
+      },
     data() {
       return {
         form: {
           email: '',
           name: '',
-    
+
           checked: []
         },
         foods: [{ text: 'Select One', value: null }, 'Carrots', 'Beans', 'Tomatoes', 'Corn'],
@@ -102,7 +125,9 @@
         this.$nextTick(() => {
           this.show = true
         })
-      }
+      },
+
+
     }
   }
 </script>

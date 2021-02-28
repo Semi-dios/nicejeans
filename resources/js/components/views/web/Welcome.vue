@@ -1,5 +1,5 @@
 <template>
-  <div id="viewWelcome">
+  <div id="viewWelcome" class="p-3">
         <b-row class="justify-content-between">
         <b-col sm="12" lg="4" >
            <div class="content-text-landing">

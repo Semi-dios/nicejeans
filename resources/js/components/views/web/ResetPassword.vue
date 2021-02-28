@@ -69,7 +69,7 @@
 
 <script>
   export default {
-      nme: 'login',
+      nme: 'reset',
     data() {
       return {
         form: {

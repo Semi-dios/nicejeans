@@ -5,7 +5,7 @@
     </picture>
 
       <nav class="my-2 my-md-0 mr-md-3">
-        <router-link class="p-2 text-dark font-weight-bold" :to="{name: 'welcome'}">HOME</router-link>
+        <router-link class="p-2 text-dark font-weight-bold" :to="{name: 'welcome'}">INICIO</router-link>
         <router-link class="p-2 text-dark font-weight-bold" :to="{name: 'about'}">NOSOTROS</router-link>
         <router-link class="p-2 text-dark font-weight-bold" :to="{name: 'contact'}">CONTACTO</router-link>
       </nav>

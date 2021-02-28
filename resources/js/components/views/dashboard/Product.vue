@@ -218,7 +218,7 @@
                 <img src="" alt="" ref="newProductImageDisplay">
             </div>
                 <b-form-file v-model="form.image" @change="attachImage" ref="newProductImage" class="mt-3" plain></b-form-file>
-                <div class="invalid-feedback text-danger" v-if="errors.name">{{errors.image[0]}}</div>
+                <div class="invalid-feedback text-danger" v-if="errors.image">{{errors.image[0]}}</div>
             </b-form-group>
             <hr>
             <b-button class="mt-3" variant="outline-danger" block @click="hideModal">Cancelar</b-button>
@@ -289,7 +289,7 @@ import * as  productService from '../../../../js/services/product_service';
         },
          form: {
           image: '',
-          name: '',
+          name: ''
         },
         errors: {},
          show: true
@@ -335,16 +335,17 @@ import * as  productService from '../../../../js/services/product_service';
                 reader.readAsDataURL(this.form.image);
             }
       },
-      createProduct: async function (){
+      createProduct: async function(){
+          alert(JSON.stringify(this.form))
           let formData = new FormData();
-          formData.append('name', this.form.name)
+          formData.append('name', this.form.name);
           formData.append('image', this.form.image);
 
           try {
               const response = await productService.createProduct(formData);
               console.log(response);
           } catch (error) {
-                console.log(''+error);
+                console.log(''+error.response.status);
               switch (error.response.status) {
 
                   case 422:

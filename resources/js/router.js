@@ -11,6 +11,7 @@ import About from '../js/components/views/web/About.vue';
 import Contact from '../js/components/views/web/Contact.vue';
 import Forgot from '../js/components/views/web/Forgot.vue';
 import Reset from '../js/components/views/web/ResetPassword.vue';
+import NotFound from '../js/components/partials/404.vue';
 
 
 /* Dashboard */
@@ -70,6 +71,12 @@ const routes = [
         meta: {
             header: 1
         }
+    },
+    {
+        path: '/404',
+        name: 'notfound',
+        component:NotFound,
+
     },
     {
         path: '/adminProduct',

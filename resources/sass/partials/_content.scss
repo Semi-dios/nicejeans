@@ -1,21 +1,25 @@
 /* Content List */
 /***************/
 // 1.Landing Page
-// 2.Header
-// 3.Content
-// 4.Footer
+// 2.Login
+// 3.Register
+// 4.Forgot
+// 5.Reset
+// 6.Contact
+// 7.About
+// 8.NotFound
 /**************/
 
 
 
-/*  1.Landing Page */
+/* 1. Landing Page */
 
 
 #viewWelcome {
     .imgLanding {
         width: 100%;
         height: auto;
-        
+
 
         img {
             object-fit: cover;
@@ -27,7 +31,7 @@
         height: 100%;
         vertical-align: text-bottom;
         position: relative;
-     
+
     }
 
     @media (min-width: 1300px){
@@ -52,23 +56,24 @@
         }
         .imgLanding {
             max-width: rem(200px);
-            height: auto; 
+            height: auto;
             img {
                 object-fit: cover;
                 width: 100%;
             }
         }
     }
-  
+
 }
 
 
-/*  1.Login */
+/*  2. Login */
 
 #viewLogin {
     .custom-btn-primary {
         display: inline-flex;
-        @include btn-primary($height: rem(35px), $font: rem(12px))
+        @include btn-primary($height: rem(35px), $font: rem(12px));
+        @include box-shadow($top: 0px, $left: 3px, $blur: 6px, $color: #00000023, $inset: "")
     }
     .title-xl {
         font-weight: bold;
@@ -89,70 +94,58 @@
         position: relative;
         .custom-form-group {
             width: 100%;
-            height: rem(50px);
+
             margin-bottom: rem(10px);
         }
-            input {
-                color: #2F4F4F;
-                padding: 12.5px;
-                border: none;
-                position:absolute;
-                transition: all .5s;
-                outline: none;
-                background: transparent;
-                
-                &::placeholder {
-                    color: #708090;
-                }
-                &.inputcr {
-                    background: transparent;
-                    border-bottom: 2px solid #86d6d8;
-                    width: 100%;
-                    top: 15%;
-                    left: 50%;
-                    transform: translate(-50%, -30%);
-                    &:hover {
-                        
-                        border-bottom: 2px solid #20c3d0;
-                    }
-                    
-                }
-                &.inputps{
-                    background: transparent;
-                    border-bottom: 2px solid #86d6d8;
-                    position: absolute;
-                    width: 100%;
-                    top: 50%;
-                    left: 50%;
-                    transform: translate(-50%, -55%);         
-                    &:hover {
-                        
-                        border-bottom: 2px solid #20c3d0;
-                    }
-                    
-                }
-        }
+
     }
     .imgLogin {
         width: 100%;
         height: auto;
-        
+
 
         img {
             object-fit: cover;
             width: 100%;
         }
     }
-            
-            
-  
+
+    .welcomeback {
+        background: rgba(10,197,168,0.6);
+        width: 100%;
+        height: 100%;
+        @include radius($border-top-left: rem(0px), $border-top-right: rem(18px), $border-bottom-left: rem(0px), $border-bottom-right: rem(18px));
+        text-align: center;
+        padding: rem(25px) rem(20px);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        box-sizing: border-box;
+        .welcomebackHeader {
+            margin-bottom: rem(10px);
+        }
+        .custom-btn-secondary {
+            width: 100%;
+            height: rem(35px);
+            font-size: rem(13px);
+            color: $white;
+            @include box-shadow($top: 0px, $left: 3px, $blur: 6px, $color: #00000023, $inset: "");
+            max-width: rem(200px);
+
+        }
+
+    }
+
+
+
 
     @media (min-width: 768px) {
         .custom-btn-primary {
             min-width: rem(150px);
         }
-        
-       
+
+
     }
     @media (max-width: 768px) {
         .custom-btn-primary {
@@ -163,61 +156,124 @@
            padding: rem(15px);
            display: flex;
            justify-content: center;
-            height: auto; 
+            height: auto;
             img {
                 object-fit: cover;
                 width: rem(200px);
                 height: auto;
             }
         }
-       
+        .welcomeback {
+            @include radius($border-top-left: rem(0px), $border-top-right: rem(0px), $border-bottom-left: rem(18px), $border-bottom-right: rem(18px));
+        }
+
     }
 }
+
+/* 3. Register */
+
+#viewRegister {
+    @extend #viewLogin;
+
+    .welcomeback {
+
+        @include radius($border-top-left: rem(18px), $border-top-right: rem(0px), $border-bottom-left: rem(18px), $border-bottom-right: rem(0px));
+        text-align: center;
+        padding: rem(25px) rem(20px);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        box-sizing: border-box;
+        .welcomebackHeader {
+            margin-bottom: rem(10px);
+        }
+        .custom-btn-secondary {
+            width: 100%;
+            height: rem(35px);
+            font-size: rem(13px);
+            color: $white;
+            @include box-shadow($top: 0px, $left: 3px, $blur: 6px, $color: #00000023, $inset: "");
+            max-width: rem(200px);
+
+        }
+
+
+
+    }
+
+    .itemSocial {
+        width: 100%;
+        .custom-list-group {
+          display: flex;
+          justify-content: center;
+          text-align: center;
+          .list-group-item {
+              border: none;
+              background: transparent;
+              padding: rem(0);
+              &:hover {
+                  cursor: pointer;
+              }
+
+              i{
+                  width: rem(40px);
+                  height: rem(40px);
+                  @include radius($border-top-left: rem(40px), $border-top-right: rem(40px), $border-bottom-left: rem(40px), $border-bottom-right: rem(40px));
+                  border: 1px solid $grey-15 ;
+                  font-size: rem(20px);
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  background: $white;
+                  @include box-shadow($top: 0px, $left: 2px, $blur: 4px, $color: #00000033, $inset: "")
+              }
+
+            &:first-child{
+                margin-right: rem(12px);
+                i:first-child{
+                    color: $red;
+
+                }
+            }
+          }
+
+        }
+    }
+
+    @media (max-width: 768px) {
+
+        .welcomeback {
+            @include radius($border-top-left: rem(18px), $border-top-right: rem(18px), $border-bottom-left: rem(0px), $border-bottom-right: rem(0px));
+        }
+
+
+
+    }
+}
+
+/* 4. Forgot */
 #viewForgot {
   @extend #viewLogin;
   .contentLogo {
-      display: flex;
-      justify-content: center;
-      align-items: center;
+        img {
+            max-width: rem(50px);
+            height: auto;
+            object-fit: cover;
+        }
   }
 
   .customform {
     .custom-form-group {
         width: 100%;
-        height: rem(50px);
-        margin-bottom: rem(10px);
-        position: relative;
+
     }
-    input {
-        color: #2F4F4F;
-        padding: 12.5px;
-        border: none;
-        position:absolute;
-        transition: all .5s;
-        outline: none;
-        background: transparent;
-        
-        &::placeholder {
-            color: #708090;
-        }
-        &.inputcr {
-            background: transparent;
-            border-bottom: 2px solid #86d6d8;
-            width: 100%;
-            top: 30%;
-            left: 50%;
-            transform: translate(-50%, -30%);
-            &:hover {
-                
-                border-bottom: 2px solid #20c3d0;
-            }
-            
-        }
-      
-}
+
   }
- 
+
 }
+
+/* 5. Reset */
 #viewReset {
   @extend #viewLogin;
   .contentLogo {
@@ -233,50 +289,124 @@
         margin-bottom: rem(10px);
         position: relative;
     }
-    input {
-        color: #2F4F4F;
-        padding: 12.5px;
-        border: none;
-        position:absolute;
-        transition: all .5s;
-        outline: none;
-        background: transparent;
-        
-        &::placeholder {
-            color: #708090;
-        }
-        &.inputps {
-            background: transparent;
-            border-bottom: 2px solid #86d6d8;
-            width: 100%;
-            top: 30%;
-            left: 50%;
-            transform: translate(-50%, -30%);
-            &:hover {
-                
-                border-bottom: 2px solid #20c3d0;
-            }
-            
-        }
-        &.inputpsc {
-            background: transparent;
-            border-bottom: 2px solid #86d6d8;
-            width: 100%;
-            top: 30%;
-            left: 50%;
-            transform: translate(-50%, -30%);
-            &:hover {
-                
-                border-bottom: 2px solid #20c3d0;
-            }
-            
-        }
-      
-}
+
   }
- 
+
 }
 
+/*6. Contact  */
 #viewContact {
-    @extend #viewWelcome;
+    .imgContact {
+        width: 100%;
+        padding:0;
+        display: flex;
+        justify-content: center;
+        img {
+            max-width: rem(400px);
+            height: auto;
+            object-fit: auto;
+        }
+    }
+
+    .custom-btn-secondary {
+        width: 100%;
+        height: rem(35px);
+        max-width: rem(180px);
+    }
+}
+/*7. About  */
+#viewAbout {
+    .contentviewBody {
+
+        .contentHeader {
+            text-align: center;
+            margin-bottom: rem(30px);
+            word-wrap: break-word;
+
+
+        }
+        .contentImage {
+            width: 100%;
+            padding:0;
+            display: inline-block;
+            justify-content: center;
+            @include radius($border-top-left: rem(60px), $border-top-right: rem(60px), $border-bottom-left: rem(60px), $border-bottom-right: rem(60px));
+            max-width: rem(150px);
+            max-height: rem(130px);
+            box-sizing: border-box;
+            @include box-shadow($top: 6px, $left: 6px, $blur: 12px, $color: #00000029, $inset: "");
+            margin-bottom: rem(15px);
+
+            img {
+                max-width: rem(150px);
+                height: auto;
+                object-fit: cover;
+               border-radius: inherit;
+            }
+        }
+        .contentImage:nth-child(3){
+            justify-content: flex-end;
+        }
+
+        .custom-btn-secondary {
+            width: 100%;
+            height: rem(35px);
+            max-width: rem(180px);
+        }
+    }
+
+}
+
+/* 8. Not Found */
+#viewNotFound{
+    @extend #viewAbout;
+    position: relative;
+      &:before {
+        content: " ";
+        background-image:  url('/images/found.jpg') ;
+        border-radius: rem(20px);
+        background-repeat: no-repeat;
+        background-size: cover;
+        top: 0px;
+        right: 0px;
+        bottom: 0px;
+        left: 0px;
+        opacity: 0.60;
+      }
+
+    .contentLogo {
+        img {
+            max-width: rem(60px);
+            height: auto;
+            object-fit: cover;
+        }
+    }
+    .title-xl {
+        font-size: rem(45px);
+    }
+
+    .contentviewBody {
+        .custom-btn-primary {
+            height: rem(35px);
+            font-size: rem(13px);
+            max-width: rem(180px);
+            margin: 0;
+            @include box-shadow($top: 0px, $left: 3px, $blur: 6px, $color: #00000033, $inset: "");
+        }
+        .custom-btn-secondary {
+            height: rem(35px);
+            font-size: rem(13px);
+            max-width: rem(180px);
+            background: transparent;
+            color: $secondary;
+            border-color: $secondary;
+            margin: 0;
+            @include box-shadow($top: 0px, $left: 3px, $blur: 6px, $color: #00000033, $inset: "");
+            &:hover {
+                background: transparent;
+                color: $secondary;
+                border-color: $secondary;
+            }
+        }
+    }
 }

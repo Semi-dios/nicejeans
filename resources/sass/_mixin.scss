@@ -37,7 +37,7 @@
         border-color: $secondary;
         cursor: pointer;
     }
- 
+
 
 }
 @mixin btn-primary($height: rem(45px), $font: rem(13px)){
@@ -58,5 +58,31 @@
         background: $primary;
         border-color: $primary;
         cursor: pointer;
+    }
+}
+
+
+/* inputs */
+
+@mixin input() {
+    height: rem(35px);
+    font-size: rem(13px);
+    @include radius($border-top-left:rem(25px), $border-top-right:rem(25px), $border-bottom-left:rem(25px), $border-bottom-right:rem(25px));
+    border: 1px solid $grey-15;
+    &:focus {
+        border-color: $primary;
+        background-color: $white !important;
+
+    }
+}
+@mixin textArea() {
+
+    font-size: rem(13px);
+    @include radius($border-top-left:rem(12px), $border-top-right:rem(12px), $border-bottom-left:rem(12px), $border-bottom-right:rem(12px));
+    border: 1px solid $grey-15;
+    &:focus {
+        border-color: $primary;
+        background-color: $white !important;
+
     }
 }

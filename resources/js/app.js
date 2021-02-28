@@ -10,7 +10,7 @@ import Vue from 'vue';
 import App from './App.vue'
 import router from '../js/router';
 require('./bootstrap');
-import { BootstrapVue } from 'bootstrap-vue'
+import { BootstrapVue } from 'bootstrap-vue';
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue

@@ -1,20 +1,22 @@
 <template>
-  <div id="viewForgot">
-    <b-row class="mb-4">
-        <b-col sm="12" class="">
-            <picture  class="contentLogo">
-                <img src="/images/logo.svg" alt="">
+  <b-modal id="viewForgot" ref="viewForgot" hide-footer  >
+      <template #modal-header="{ close }">
+             <picture  class="contentLogo">
+                        <img src="/images/logo.svg" alt="">
             </picture>
-        </b-col>
-    </b-row>
+           <b-button size="xs"  @click="close()" class="close custom-close">
+              <i class="fas fa-times "></i>
+            </b-button>
+
+
+        </template>
     <b-row>
         <b-col sm="12"  class="justify-content-center">
-             
             <h3 class="title-xl text-secondary text-center mb-4">
                OLVIDASTE TU CONTRASEÑA ?
             </h3>
-            <p class="p-md text-secondary">Ingrese un correo electronico </p>
-            <b-form @submit="onSubmit" @reset="onReset" v-if="show" class="customform mb-3 ">
+            <p class="p-md text-secondary mb-4">Ingrese su correo electronico: </p>
+                <b-form @submit="onSubmit" @reset="onReset" class="customform mb-3 ">
                 <b-form-group
                     id="input-group-1"
                     label-for="input-1"
@@ -25,42 +27,37 @@
                     id="input-1"
                     v-model="form.email"
                     type="email"
-                    placeholder="Ingrese Email"
-                    class="inputcr"
+                    placeholder="corre@gmail.com"
+                    class="custom-input"
                     required
                     ></b-form-input>
                 </b-form-group>
-
-
-
            <div class="form-group d-flex justify-content-center">
                 <b-button type="submit" class="custom-btn-primary" >Enviar link</b-button>
            </div>
             </b-form>
 
         </b-col>
-        <b-col sm="12"  class="justify-content-center text-center">
-            <div class="p-md text-secondary">Volver a
-                <router-link :to="{name: 'login'}" class="text-primary">Inicio de Sesion</router-link>
-            </div>
-        </b-col>
+
 
     </b-row>
 
-  </div>
+
+  </b-modal>
+
 </template>
 
 <script>
   export default {
-      nme: 'login',
+    name: 'forgot',
     data() {
       return {
+        image: '/images/logo.svg',
         form: {
-          email: '',
-        },
-        foods: [{ text: 'Select One', value: null }, 'Carrots', 'Beans', 'Tomatoes', 'Corn'],
-        show: true
+          email: ''
+        }
       }
+
     },
     methods: {
       onSubmit(event) {
