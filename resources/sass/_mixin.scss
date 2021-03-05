@@ -65,8 +65,9 @@
 /* inputs */
 
 @mixin input() {
-    height: rem(35px);
+    height: rem(35px) !important;
     font-size: rem(13px);
+    border-radius: 25px!important;
     @include radius($border-top-left:rem(25px), $border-top-right:rem(25px), $border-bottom-left:rem(25px), $border-bottom-right:rem(25px));
     border: 1px solid $grey-15;
     &:focus {

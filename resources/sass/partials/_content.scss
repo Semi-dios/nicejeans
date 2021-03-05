@@ -8,6 +8,10 @@
 // 6.Contact
 // 7.About
 // 8.NotFound
+/////////////
+// 1.Estadistic
+// 2.Profile
+// 3.Sales
 /**************/
 
 
@@ -70,6 +74,7 @@
 /*  2. Login */
 
 #viewLogin {
+    padding: 0 !important;
     .custom-btn-primary {
         display: inline-flex;
         @include btn-primary($height: rem(35px), $font: rem(12px));
@@ -173,6 +178,7 @@
 /* 3. Register */
 
 #viewRegister {
+    padding: 0!important;
     @extend #viewLogin;
 
     .welcomeback {
@@ -302,9 +308,9 @@
         display: flex;
         justify-content: center;
         img {
-            max-width: rem(400px);
+            max-width: rem(300px);
             height: auto;
-            object-fit: auto;
+            object-fit: cover;
         }
     }
 
@@ -409,4 +415,113 @@
             }
         }
     }
+}
+
+
+
+/* 1.Stadistic */
+#viewStadistic{
+    .custom-listgrouphorizontal {
+        padding: 0;
+        flex-direction: row;
+        display: grid;
+        grid-template-columns: repeat(3,auto);
+        .list-group-item {
+            padding: 0;
+            .p-sm {
+                margin: 0;
+            }
+        }
+    }
+}
+/* 2.Profile */
+#viewUserProfile{
+   @extend #viewStadistic;
+   .span-md {
+       font-size: rem(18px);
+       margin-bottom: rem(10px);
+   }
+   .avatarInfoUser {
+       display: flex;
+       width: rem(180px);
+       height:  rem(180px);
+       padding: rem(2px);
+       justify-content: center;
+       align-items: center;
+       box-sizing: border-box;
+       @include radius($border-top-left: rem(100%), $border-top-right: rem(100%), $border-bottom-left: rem(100%), $border-bottom-right: rem(100%));
+        @include box-shadow($top: 1px, $left: 2px, $blur: 4px, $color: #00000029, $inset: "");
+        img {
+            width: rem(172px);
+            height:  rem(172px);
+            object-fit: cover;
+            border-radius: inherit;
+        }
+    }
+
+    .custom-input {
+        @include input();
+    }
+    .custom-btn-primary {
+        display: inline-flex;
+        @include btn-primary($height: rem(40px), $font: rem(13px));
+        @include box-shadow($top: 0px, $left: 3px, $blur: 6px, $color: #00000023, $inset: "");
+        width: 100%;
+    }
+    .custom-btn-secondary {
+        width: 100%;
+        height: rem(40px);
+        font-size: rem(13px);
+        color: $white;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        @include box-shadow($top: 0px, $left: 3px, $blur: 6px, $color: #00000023, $inset: "");
+        @include radius($border-top-left: rem(25px), $border-top-right: rem(25px), $border-bottom-left: rem(25px), $border-bottom-right: rem(25px));
+
+    }
+
+    .btn-border{
+        background: transparent;
+        border: 1px solid $primary;
+        font-size: 13px;
+        width: 100%;
+        max-width: rem(200px);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        color:$primary;
+        @include box-shadow($top: 0px, $left: 3px, $blur: 6px, $color: #00000023, $inset: "");
+        @include radius($border-top-left: rem(25px), $border-top-right: rem(25px), $border-bottom-left: rem(25px), $border-bottom-right: rem(25px));
+    }
+
+    @media  (max-width: 1024px) {
+        .avatarInfoUser {
+
+            width: rem(100px);
+            height:  rem(100px);
+
+             img {
+                 width: rem(92px);
+                 height:  rem(92px);
+                 object-fit: cover;
+                 border-radius: inherit;
+             }
+         }
+    }
+}
+
+
+/* 3.Sales */
+#viewSales {
+    @extend #viewUserProfile;
+   .custom-btn-primary{
+    max-width: rem(200px);
+   }
+
+   .custom-table {
+       .hidden-columns{
+           display: none;
+       }
+   }
 }
