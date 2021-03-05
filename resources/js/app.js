@@ -7,8 +7,11 @@
 
 
 import Vue from 'vue';
+
 import App from './App.vue'
-import router from '../js/router';
+///import DashboardPlugin from './plugins/dashboard-plugin';
+import router from '../js/routes/router';
+import ArgonDashboard from "../js/plugins/dashboard-plugin";
 require('./bootstrap');
 import { BootstrapVue } from 'bootstrap-vue';
 /**
@@ -24,11 +27,15 @@ import { BootstrapVue } from 'bootstrap-vue';
 Vue.use(BootstrapVue);
 
 
+
+// plugin setup
+//Vue.use(DashboardPlugin);
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
+Vue.use(ArgonDashboard);
 
 new Vue({
     el: '#app',

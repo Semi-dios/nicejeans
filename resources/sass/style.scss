@@ -11,12 +11,104 @@
 /* 1. Layout */
 /* Background */
 .custom-bg{
-    background-repeat:no-repeat;
+    background-repeat:repeat;
     background-size: cover;
     font-family: $font-family-sans-serif;
     height: 100vh;
     width: 100%;
 }
+
+
+/* Sidebar */
+@media (max-width: 760px){
+    .customerNav {
+        display:none !important;
+
+    }
+}
+@media (min-width: 768px){
+    .navbar-vertical.custom-navbar-expand-md {
+        position: absolute !important;
+        @include radius($border-top-left:rem(19px), $border-top-right:rem(0px), $border-bottom-left:rem(19px), $border-bottom-right:rem(0px));
+        z-index: 999;
+    }
+
+    .custon-paneldashboard  {
+        margin-left: rem(250px);
+        padding: rem(15px);
+        padding-top: rem(100px);
+    }
+    .custon-panelbodydashboard {
+        width: auto;
+        height: auto;
+        overflow: auto;
+        max-height: rem(800px);
+    }
+    .customerNav {
+        width: 80% !important;
+        right: 0 !important;
+        left: 20% !important;
+
+    }
+}
+
+
+@media (min-width: 1024px){
+    .navbar-vertical.custom-navbar-expand-md {
+        position: absolute !important;
+        @include radius($border-top-left:rem(19px), $border-top-right:rem(0px), $border-bottom-left:rem(19px), $border-bottom-right:rem(0px));
+        z-index: 999;
+    }
+
+    .custon-paneldashboard  {
+        margin-left: rem(250px);
+        padding: rem(15px);
+        padding-top: rem(100px);
+    }
+    .custon-panelbodydashboard {
+        width: auto;
+        height: auto;
+        overflow: auto;
+    }
+    .customerNav {
+        width: 70% !important;
+        right: 0 !important;
+        left: 30% !important;
+
+    }
+}
+
+
+/* Card */
+.custom-cardbody {
+    @include radius($border-top-left:rem(10px), $border-top-right:rem(10px), $border-bottom-left:rem(10px), $border-bottom-right:rem(10px));
+    @include box-shadow($top: 1px, $left: 4px, $blur: 4px, $color: #00000023, $inset: "");
+    .card-body {
+       padding: rem(12px);
+        display: flex;
+        align-items: center;
+        .icon {
+            height: rem(40px);
+            width: rem(40px);
+            padding: rem(5px);
+        }
+    }
+}
+
+.custom-card {
+    @include radius($border-top-left:rem(10px), $border-top-right:rem(10px), $border-bottom-left:rem(10px), $border-bottom-right:rem(10px));
+    @include box-shadow($top: 1px, $left: 4px, $blur: 4px, $color: #00000023, $inset: "");
+}
+
+/* Header */
+
+.avatar img {
+    width: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    height: 100%;}
+
+
 
 /* Text */
 .title-xl {
@@ -47,7 +139,7 @@
 .span-sm {
     font-size:rem(12px);
 }
-.span-sm {
+.span-xs {
     font-size:rem(10px);
 }
 
@@ -67,6 +159,10 @@
     font-size:rem(10px);
 }
 
+
+.font-weitgh-medium {
+    font-weight: 700;
+}
 
 
 //Web Panel
@@ -138,6 +234,10 @@
     i {
         font-size: rem(13px);
     }
+}
+
+.text-greyicon {
+    color: $ot-grey;
 }
 
 /* 2. Header */

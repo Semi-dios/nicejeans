@@ -3,9 +3,6 @@
            <b-row class="justify-content-center d-flex align-items-center h-100">
                 <b-col sm="11" lg="10"  >
                     <div class="custom-panel">
-                            <div class="custom-panel-heading px-4 pb-0 pt-3" v-if="$route.meta.header === 1">
-                                    <Header />
-                            </div>
                             <div class="custom-panel-body">
                                     <router-view></router-view>
                             </div>
@@ -16,16 +13,13 @@
 </template>
 
 <script>
-import Header from './components/partials/Header'
-import Footer from './components/partials/Footer'
-import Sidebar from './components/partials/Sidebar'
+
 
 
 export default {
     components: {
-        Header,
-        Footer,
-        Sidebar,
+
+
 
     }
 }
